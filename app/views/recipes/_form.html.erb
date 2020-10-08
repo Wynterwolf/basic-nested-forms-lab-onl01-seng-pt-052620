@@ -1,0 +1,13 @@
+<%= form_for @recipe do |f| %>
+  Title: <%= f.text_field :title %>
+
+  <%# nested use fields_for helper %>
+  <%= f.fields_for :ingredients do |i| %>
+
+  Quantity <%= i.text_field :quantity %>
+  Name <%= i.text_field :name %>
+
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
